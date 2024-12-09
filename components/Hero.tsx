@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 const Hero = () => {
   const words = ["Innovation", "Experiences", "Solutions", "Possibilities"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,22 +14,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [words.length]);
 
-  const handleScroll = () => {
-    if (window.scrollY > 200) {
-      setShowScroll(true);
-    } else {
-      setShowScroll(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <div className="relative pb-20 pt-36">

@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import AnimatedPortfolioNav from "@/components/Navbar";
 import Projects from "@/components/RecentProjects";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import Image from "next/image";
 
 export default function Home() {
   return (
