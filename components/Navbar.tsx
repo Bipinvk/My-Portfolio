@@ -36,15 +36,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-xs border-b border-gray-200 navbar py-3">
+    <header className="fixed top-0 left-0 w-full z-50  shadow-sm border-gray-200 navbar py-3 bg-black/50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo/Name on the left */}
-        <div className="text-2xl font-thin text-black">
-          Bipin V K <span className="font-light text-gray-300">™</span>
-        </div>
+        <div className="text-2xl font-thin ">Bipin V K ™</div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8 text-gray-600">
+        <nav className="hidden md:flex space-x-8 ">
           <a href="#about" className="nav-link hover:text-black">
             About
           </a>
@@ -59,23 +57,20 @@ const Navbar = () => {
           </a>
           <div className="pl-20">
             <a href="#contact" className="nav-link hover:text-black">
-              ↳ Contact
+              <span className="animate-bounce">↳ </span>Contact
             </a>
           </div>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden focus:outline-none text-black"
-        >
+        <button onClick={toggleMenu} className="md:hidden focus:outline-none ">
           <span className="material-icons">menu</span>
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden  shadow-lg">
           <nav className="flex flex-col items-start space-y-2 px-6 py-4">
             <a href="#about" className="nav-link hover:text-black">
               About
