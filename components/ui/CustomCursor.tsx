@@ -46,11 +46,11 @@ const CustomCursor: React.FC = () => {
       }
     },
     text: {
-      height: 100,
-      width: 100,
+      height: 15,
+      width: 15,
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
-      backgroundColor: "rgba(255,255,255,0.1)",
+      backgroundColor: "rgba(255,254,255,0.05)",
       mixBlendMode: "difference"
     }
   };
