@@ -1,4 +1,6 @@
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
+import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import AnimatedPortfolioNav from "@/components/Navbar";
 import Projects from "@/components/RecentProjects";
@@ -10,8 +12,10 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <AnimatedPortfolioNav />
         <Hero />
+        <Grid />
         <Experience />
         <Projects />
+        <Footer />
         <ScrollToTop />
       </div>
     </main>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,22 +44,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 ">
-          <a href="#about" className="nav-link hover:text-black">
+          <Link href="#about" className="nav-link hover:text-black">
             About
-          </a>
-          <a href="#projects" className="nav-link hover:text-black">
+          </Link>
+          <Link href="#projects" className="nav-link hover:text-black">
             Projects
-          </a>
-          <a href="#expertise" className="nav-link hover:text-black">
+          </Link>
+          <Link href="#expertise" className="nav-link hover:text-black">
             Expertise
-          </a>
-          <a href="#experience" className="nav-link hover:text-black">
+          </Link>
+          <Link href="#experience" className="nav-link hover:text-black">
             Experience
-          </a>
+          </Link>
           <div className="pl-20">
-            <a href="#contact" className="nav-link hover:text-black">
+            <Link href="#contact" className="nav-link hover:text-black">
               <span className="animate-bounce">↳ </span>Contact
-            </a>
+            </Link>
           </div>
         </nav>
 
@@ -71,22 +72,22 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden  shadow-lg">
-          <nav className="flex flex-col items-start space-y-2 px-6 py-4">
-            <a href="#about" className="nav-link hover:text-black">
+          <nav className="flex flex-col items-end space-y-2 px-6 py-4">
+            <Link href="#about" className="nav-link hover:text-black">
               About
-            </a>
-            <a href="#projects" className="nav-link hover:text-black">
+            </Link>
+            <Link href="#projects" className="nav-link hover:text-black">
               Projects
-            </a>
-            <a href="#expertise" className="nav-link hover:text-black">
+            </Link>
+            <Link href="#expertise" className="nav-link hover:text-black">
               Expertise
-            </a>
-            <a href="#experience" className="nav-link hover:text-black">
+            </Link>
+            <Link href="#experience" className="nav-link hover:text-black">
               Experience
-            </a>
-            <a href="#contact" className="nav-link hover:text-black">
+            </Link>
+            <Link href="#contact" className="nav-link hover:text-black">
               ↳ Contact
-            </a>
+            </Link>
           </nav>
         </div>
       )}

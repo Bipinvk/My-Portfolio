@@ -70,6 +70,7 @@ const Hero = () => {
   return (
     <div
       ref={containerRef}
+      id="home"
       className="w-full h-screen flex justify-center items-center"
     >
       <div className="h-full py-20 w-full">
