@@ -1,93 +1,69 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, Variant, TargetAndTransition, AnimationControls } from "framer-motion";
 
-interface MousePosition {
-  x: number;
-  y: number;
+import React, { useState, useEffect, useRef } from 'react';
+import styles from './CustomCursor.module.css';
+
+interface CustomCursorProps {
+  children?: React.ReactNode;
 }
 
-type CursorVariant = "default" | "text";
-
-type CursorVariants = {
-  [key in CursorVariant]: Variant;
-};
-
-const CustomCursor: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0
-  });
-
-  const [cursorVariant, setCursorVariant] = useState<CursorVariant>("default");
+const CustomCursor: React.FC<CustomCursorProps> = ({ children }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHoveringText, setIsHoveringText] = useState(false);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
+    const handleMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseEnterText = (e: Event) => {
+      // Use type guard and check for element
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'P' || target.tagName === 'SPAN' || target.tagName === 'A')) {
+        setIsHoveringText(true);
+      }
+    };
+
+    const handleMouseLeaveText = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'P' || target.tagName === 'SPAN' || target.tagName === 'A')) {
+        setIsHoveringText(false);
+      }
+    };
+
+    // Add event listeners to document
+    document.addEventListener('mousemove', handleMouseMove);
+    
+    // Use querySelectorAll to find all text-based elements
+    const textElements = document.querySelectorAll('p, span, a');
+    textElements.forEach((element) => {
+      element.addEventListener('mouseenter', handleMouseEnterText);
+      element.addEventListener('mouseleave', handleMouseLeaveText);
+    });
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      
+      textElements.forEach((element) => {
+        element.removeEventListener('mouseenter', handleMouseEnterText);
+        element.removeEventListener('mouseleave', handleMouseLeaveText);
       });
-    };
-
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  const variants: CursorVariants = {
-    default: {
-      x: mousePosition.x - 10,
-      y: mousePosition.y - 10,
-      transition: {
-        type: "spring",
-        mass: 0.8
-      }
-    },
-    text: {
-      height: 15,
-      width: 15,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-      backgroundColor: "rgba(255,254,255,0.05)",
-      mixBlendMode: "difference"
-    }
-  };
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
-
-  useEffect(() => {
-    const handleMouseEnterText = (e: MouseEvent) => {
-      const target = e.target as Element;
-      if (target.closest('a, button, [data-cursor="hover"]')) {
-        textEnter();
-      }
-    };
-
-    const handleMouseLeaveText = (e: MouseEvent) => {
-      const target = e.target as Element;
-      if (target.closest('a, button, [data-cursor="hover"]')) {
-        textLeave();
-      }
-    };
-
-    document.addEventListener('mouseenter', handleMouseEnterText, true);
-    document.addEventListener('mouseleave', handleMouseLeaveText, true);
-
-    return () => {
-      document.removeEventListener('mouseenter', handleMouseEnterText, true);
-      document.removeEventListener('mouseleave', handleMouseLeaveText, true);
     };
   }, []);
 
   return (
-    <motion.div 
-      className="fixed z-50 pointer-events-none rounded-full bg-black"
-      variants={variants}
-      animate={cursorVariant}
-    />
+    <>
+      {children}
+      <div 
+        ref={cursorRef}
+        className={`${styles.customCursor} ${isHoveringText ? styles.hoveringText : ''}`}
+        style={{ 
+          left: `${position.x}px`, 
+          top: `${position.y}px` 
+        }}
+      />
+    </>
   );
 };
 

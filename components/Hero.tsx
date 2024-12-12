@@ -94,7 +94,7 @@ const Hero = () => {
         <div className="py-4">
           <a href="#contact" className="nav-link hover:text-black group ">
             <span className="animate-bounce inline-block group-hover:animate-none mr-1">
-              ↳ {" "}
+              ↳{" "}
             </span>
             Book a meeting
           </a>

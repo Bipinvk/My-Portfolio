@@ -37,8 +37,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50  shadow-sm border-gray-200 navbar py-3 bg-black/50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full z-50  shadow-sm border-gray-200 navbar py-3 bg-black/50 px-8">
+      <div className=" mx-auto  py-4 flex justify-between items-center">
         {/* Logo/Name on the left */}
         <div className="text-2xl font-thin ">Bipin V K ™</div>
 

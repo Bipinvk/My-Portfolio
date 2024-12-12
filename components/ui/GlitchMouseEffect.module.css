@@ -1,0 +1,78 @@
+.glitchContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.glitchOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: transparent;
+  mix-blend-mode: difference;
+  opacity: calc(var(--glitch-active, 0));
+  transition: opacity 0.3s ease;
+}
+
+.glitchOverlay::before,
+.glitchOverlay::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--mouse-y, 0px) - 50px);
+  left: calc(var(--mouse-x, 0px) - 50px);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle at center,
+    rgba(157, 0, 255, 0.5),
+    rgba(255, 21, 0, 0.5)
+  );
+  filter: blur(50px);
+  transform: translate(
+      calc((var(--mouse-x, 0px) / 100) * -10px),
+      calc((var(--mouse-y, 0px) / 100) * -10px)
+    )
+    rotate(calc((var(--mouse-x, 0px) / 100) * 20deg));
+  animation: glitchMove 0.5s infinite alternate,
+    colorShift 2s infinite alternate;
+  opacity: calc(var(--glitch-active, 0));
+}
+
+.glitchOverlay::after {
+  animation-delay: -0.25s;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 21, 0, 0.5) rgba(157, 0, 255, 0.5)
+  );
+}
+
+@keyframes glitchMove {
+  0% {
+    transform: translate(
+        calc((var(--mouse-x, 0px) / 100) * -5px),
+        calc((var(--mouse-y, 0px) / 100) * -5px)
+      )
+      rotate(calc((var(--mouse-x, 0px) / 100) * 10deg));
+  }
+  100% {
+    transform: translate(
+        calc((var(--mouse-x, 0px) / 100) * 5px),
+        calc((var(--mouse-y, 0px) / 100) * 5px)
+      )
+      rotate(calc((var(--mouse-x, 0px) / 100) * -10deg));
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    filter: blur(50px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(60px) hue-rotate(180deg);
+  }
+}
