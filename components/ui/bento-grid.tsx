@@ -1,8 +1,5 @@
 import { ReactNode } from "react";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-
 import { cn } from "@/lib/utils";
-import RippleButton from "./ripple-button";
 import Link from "next/link";
 
 const BentoGrid = ({
@@ -36,7 +33,7 @@ const BentoCard = ({
   name: string;
   className: string;
   background: ReactNode;
-  Icon: any;
+  Icon: React.ComponentType<{ className?: string }>;
   description: string;
   href: string;
   cta: string;

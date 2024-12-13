@@ -11,7 +11,7 @@ const AnimatedText: React.FC = () => {
     const handleScroll = () => {
       if (!words) return;
 
-      words.forEach((word, index) => {
+      words.forEach((word) => {
         const wordTop = word.getBoundingClientRect().top;
         const distanceFromTop = window.innerHeight - wordTop + 200; // Adjust offset as needed
         const colorIndex =

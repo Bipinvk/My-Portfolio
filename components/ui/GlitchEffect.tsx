@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, CSSProperties } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./GlitchMouseEffect.module.css";
 
 interface MouseGlitchEffectProps {

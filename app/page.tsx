@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import HomeTop from "@/components/HomeTop";
 import AnimatedPortfolioNav from "@/components/Navbar";
 import Projects from "@/components/RecentProjects";
-import GlitchMouseEffect from "@/components/ui/GlitchEffect";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function Home() {

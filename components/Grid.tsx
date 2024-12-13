@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   BookOpenIcon,
   CodeIcon,
@@ -13,6 +13,7 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
 import { AnimatedBeamMultipleOutputDemo } from "./ui/animated-beam-multiple-outputs";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 // Tech Stack Logos (you can replace these with actual icons or logos)
 const techStacks = [
@@ -114,7 +115,7 @@ const Grid = () => {
                 )}
               >
                 <div className="flex flex-col items-center">
-                  <img
+                  <Image
                     src={tech.icon}
                     alt={tech.name}
                     className="h-12 w-12 mb-2"

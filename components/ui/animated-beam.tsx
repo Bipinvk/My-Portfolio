@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
-export interface AnimatedBeamProps<T extends HTMLDivElement = HTMLDivElement> {
+export interface AnimatedBeamProps {
   className?: string;
-  containerRef: RefObject<T>; 
-  fromRef: RefObject<T>;
-  toRef: RefObject<T>;
+  containerRef: RefObject<HTMLDivElement | null>;
+  fromRef: RefObject<HTMLDivElement | null>;
+  toRef: RefObject<HTMLDivElement | null>;
   curvature?: number;
   reverse?: boolean;
   pathColor?: string;
@@ -25,13 +25,13 @@ export interface AnimatedBeamProps<T extends HTMLDivElement = HTMLDivElement> {
   endYOffset?: number;
 }
 
-export const AnimatedBeam: React.FC<any> = ({
+export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   className,
   containerRef,
   fromRef,
   toRef,
   curvature = 0,
-  reverse = false, // Include the reverse prop
+  reverse = false,
   duration = Math.random() * 3 + 4,
   delay = 0,
   pathColor = "gray",
@@ -92,11 +92,9 @@ export const AnimatedBeam: React.FC<any> = ({
     };
 
     // Initialize ResizeObserver
-    const resizeObserver = new ResizeObserver((entries) => {
-      // For all entries, recalculate the path
-      for (let entry of entries) {
-        updatePath();
-      }
+    const resizeObserver = new ResizeObserver(() => {
+      // Recalculate the path
+      updatePath();
     });
 
     // Observe the container element
@@ -122,6 +120,11 @@ export const AnimatedBeam: React.FC<any> = ({
     endYOffset,
   ]);
 
+  // Only render if all refs are non-null
+  if (!containerRef.current || !fromRef.current || !toRef.current) {
+    return null;
+  }
+
   return (
     <svg
       fill="none"
@@ -130,7 +133,7 @@ export const AnimatedBeam: React.FC<any> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
         "pointer-events-none absolute left-0 top-0 transform-gpu stroke-2",
-        className,
+        className
       )}
       viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
     >
