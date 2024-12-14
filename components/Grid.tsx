@@ -118,6 +118,8 @@ const Grid = () => {
                   <Image
                     src={tech.icon}
                     alt={tech.name}
+                    width={10}
+                    height={10}
                     className="h-12 w-12 mb-2"
                   />
                   <span className="text-xs font-medium">{tech.name}</span>

@@ -1,51 +1,76 @@
 import Image from "next/image";
 import { socialMedia } from "@/data";
-
+import bgfooter from "../public/bgfooter.png";
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        {/* <Image
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        /> */}
-      </div>
+    <footer className="w-full h-screen" id="contact">
+      <div className="w-full h-full flex flex-col items-center justify-center max-w-8xl">
+        <div className="text-center mb-12 w-full flex items-center justify-center"></div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:bipinvk47@gmail.com">
-          <button title="Let's get in touch" />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Bipin V K
-        </p>
+        <main className="w-full max-w-4xl">
+          <section className="container mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+              <div className="flex items-center justify-center md:justify-start text-center md:text-left">
+                <p className="text-xl font-medium">
+                  Feel free to contact me if you have any projects to request.
+                </p>
+              </div>
 
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <Image
-                key={info.id}
-                src={info.img}
-                alt="icons"
-                width={20}
-                height={20}
-              />
+              <div className="flex justify-center items-center">
+                <Image
+                  src={bgfooter}
+                  alt="Blurred Visual"
+                  width={300}
+                  height={100}
+                  className="object-cover rounded-lg shadow-md mx-auto"
+                />
+              </div>
+
+              <div className="flex flex-col items-center md:items-end space-y-4">
+                <div className="flex space-x-4">
+                  <a
+                    href="mailto:info@example.com"
+                    className="flex items-center space-x-2 hover:text-blue-500 transition duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    EMAIL
+                  </a>
+                  <a
+                    href="https://wa.me/1234567890"
+                    className="flex items-center space-x-2 hover:text-green-500 transition duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WHATSAPP
+                  </a>
+                </div>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://github.com"
+                    className="flex items-center space-x-2 hover:text-gray-700 transition duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GITHUB
+                  </a>
+                  <a
+                    href="https://instagram.com"
+                    className="flex items-center space-x-2 hover:text-pink-500 transition duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    INSTAGRAM
+                  </a>
+                </div>
+              </div>
             </div>
-          ))}
+          </section>
+        </main>
+
+        <div className="absolute bottom-4 px-4 w-full mx-10 flex justify-between text-gray-500 text-xs text-center">
+          <p>Built by Bipin with 🤍</p>
+          <p>Portfolio © 2025</p>
         </div>
       </div>
     </footer>
