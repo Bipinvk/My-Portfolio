@@ -1,26 +1,40 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 const AnimatedText: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const colors = ["#7c7d7d", "#ebebeb", "#ffffff", "#a7a7a7", "#d9d9d9"]; // Define colors
-    const words: NodeListOf<HTMLSpanElement> | null =
+    const colors = ["#7c7d7d", "#ebebeb", "#ffffff", "#a7a7a7", "#d9d9d9"];
+    const words: NodeListOf<HTMLSpanElement> | null = 
       textRef.current?.querySelectorAll("span.word") || null;
 
     const handleScroll = () => {
       if (!words) return;
 
-      words.forEach((word) => {
-        const wordTop = word.getBoundingClientRect().top;
-        const distanceFromTop = window.innerHeight - wordTop + 200; // Adjust offset as needed
-        const colorIndex =
-          Math.floor(Math.abs(distanceFromTop) / 50) % colors.length;
+      words.forEach((word, index) => {
+        const wordRect = word.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate the distance of the word from the top of the viewport
+        const distanceFromTop = windowHeight - wordRect.top;
+        
+        // Use the index and distance to create a staggered color transition
+        const colorIndex = Math.floor(
+          (Math.abs(distanceFromTop) / 50 + index * 0.5) % colors.length
+        );
+        
         word.style.color = colors[colorIndex];
+        word.style.transition = 'color 0.3s ease-in-out';
       });
     };
 
+    // Initial call to set initial colors
+    handleScroll();
+
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,11 +49,17 @@ const AnimatedText: React.FC = () => {
 
   return (
     <div className="text-center mb-12 w-full flex items-center justify-center">
-      <p className="text-gray-300  text-2xl text-justify" ref={textRef}>
+      <p 
+        className="text-gray-300 text-2xl text-justify" 
+        ref={textRef}
+      >
         {text.map((line, lineIndex) => (
-          <span key={lineIndex} className="block ">
+          <span key={lineIndex} className="block">
             {line.split(" ").map((word, wordIndex) => (
-              <span key={wordIndex} className="word inline-block">
+              <span 
+                key={wordIndex} 
+                className="word inline-block mr-1"
+              >
                 {word}&nbsp;
               </span>
             ))}

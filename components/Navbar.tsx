@@ -6,11 +6,24 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleResumeDownload = () => {
+    // Direct path to the resume in the public folder
+    const resumePath = "/resume/BipinVK_FullStackResume2025.pdf";
+
+    // Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = resumePath;
+    link.setAttribute("download", "BipinVK_FullStackResume2025.pdf");
+
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   useEffect(() => {
     // GSAP animation on navbar links
     gsap.fromTo(
@@ -43,23 +56,27 @@ const Navbar = () => {
         <div className="text-2xl font-thin ">Bipin V K ™</div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8 ">
-          <Link href="#about" className="nav-link hover:text-black">
+        <nav className="hidden md:flex space-x-8  ">
+          <Link href="#about" className="nav-link effect-shine">
             About
           </Link>
-          <Link href="#projects" className="nav-link hover:text-black">
+          <Link href="#projects" className="nav-link effect-shine">
             Projects
           </Link>
-          <Link href="#expertise" className="nav-link hover:text-black">
+          <Link href="#expertise" className="nav-link effect-shine">
             Expertise
           </Link>
-          <Link href="#experience" className="nav-link hover:text-black">
+          <Link href="#experience" className="nav-link effect-shine">
             Experience
           </Link>
+         
           <div className="pl-20">
-            <Link href="#contact" className="nav-link hover:text-black">
-              <span className="animate-bounce">↳ </span>Contact
-            </Link>
+            <button
+              onClick={handleResumeDownload}
+              className=" hover:underline nav-link effect-shine flex items-center"
+            >
+              Download Resume
+            </button>
           </div>
         </nav>
 
@@ -73,21 +90,26 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden  shadow-lg">
           <nav className="flex flex-col items-end space-y-2 px-6 py-4">
-            <Link href="#about" className="nav-link hover:text-black">
+            <Link href="#about" className="nav-link effect-shine">
               About
             </Link>
-            <Link href="#projects" className="nav-link hover:text-black">
+            <Link href="#experience" className="nav-link effect-shine">
               Projects
             </Link>
-            <Link href="#expertise" className="nav-link hover:text-black">
+            <Link href="#experience" className="nav-link effect-shine">
               Expertise
             </Link>
-            <Link href="#experience" className="nav-link hover:text-black">
-              Experience
-            </Link>
-            <Link href="#contact" className="nav-link hover:text-black">
-              ↳ Contact
-            </Link>
+            <Link href="#contact" className="nav-link effect-shine">
+            Contact
+          </Link>
+            <div className="pl-20">
+              <button
+                onClick={handleResumeDownload}
+                className="hover:underline nav-link effect-shine flex items-center"
+              >
+                Download Resume
+              </button>
+            </div>
           </nav>
         </div>
       )}

@@ -1,12 +1,10 @@
 "use client";
 
-import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import HomeTop from "@/components/HomeTop";
 import AnimatedPortfolioNav from "@/components/Navbar";
-import Projects from "@/components/RecentProjects";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function Home() {
@@ -17,8 +15,7 @@ export default function Home() {
         <Hero />
         <HomeTop />
         <Grid />
-        <Experience />
-        <Projects />
+        {/* <Projects /> */}
         <Footer />
         <ScrollToTop />
       </div>

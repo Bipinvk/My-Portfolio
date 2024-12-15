@@ -1,72 +1,79 @@
-import Image from "next/image";
-import { socialMedia } from "@/data";
-import bgfooter from "../public/bgfooter.png";
+import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="w-full h-screen" id="contact">
       <div className="w-full h-full flex flex-col items-center justify-center max-w-8xl">
-        <div className="text-center mb-12 w-full flex items-center justify-center"></div>
+        <section className="w-full max-w-6xl container mx-auto  py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="flex items-center justify-center md:justify-start text-center md:text-left">
+              <p className="text-xl font-medium">
+                Feel free to contact me.
+                <br /> {"Let's"} work together to bring your ideas to life! <br />
+                Have a great day {":)"}
+              </p>
+            </div>
 
-        <main className="w-full max-w-4xl">
-          <section className="container mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-              <div className="flex items-center justify-center md:justify-start text-center md:text-left">
-                <p className="text-xl font-medium">
-                  Feel free to contact me if you have any projects to request.
-                </p>
+            <div className="flex justify-center items-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-20 max-md:w-full max-md:h-24 object-cover rounded-lg webgl-transition-mobile"
+                src="/footer/video.mp4"
+              ></video>
+            </div>
+            <div className="flex  items-center justify-center md:items-start gap-4">
+              <div className="flex flex-col items-center md:items-start ">
+                <Link
+                  href="mailto:bipinvk47@gmail.com"
+                  className="flex items-center space-x-2 hover:text-blue-500 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  EMAIL
+                </Link>
+                <Link
+                  href="https://github.com/Bipinvk"
+                  className="flex items-center space-x-2 hover:text-gray-700 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GITHUB
+                </Link>
               </div>
+              <div className="flex flex-col items-center md:items-start">
+                <Link
+                  href="https://wa.me/9048491610"
+                  className="flex items-center space-x-2 hover:text-green-500 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WHATSAPP
+                </Link>
 
-              <div className="flex justify-center items-center">
-                <Image
-                  src={bgfooter}
-                  alt="Blurred Visual"
-                  width={300}
-                  height={100}
-                  className="object-cover rounded-lg shadow-md mx-auto"
-                />
+                <Link
+                  href="https://instagram.com/_3ipin"
+                  className="flex items-center space-x-2 hover:text-pink-500 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  INSTAGRAM
+                </Link>
               </div>
-
-              <div className="flex flex-col items-center md:items-end space-y-4">
-                <div className="flex space-x-4">
-                  <a
-                    href="mailto:info@example.com"
-                    className="flex items-center space-x-2 hover:text-blue-500 transition duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    EMAIL
-                  </a>
-                  <a
-                    href="https://wa.me/1234567890"
-                    className="flex items-center space-x-2 hover:text-green-500 transition duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    WHATSAPP
-                  </a>
-                </div>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://github.com"
-                    className="flex items-center space-x-2 hover:text-gray-700 transition duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GITHUB
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    className="flex items-center space-x-2 hover:text-pink-500 transition duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    INSTAGRAM
-                  </a>
-                </div>
+              <div className="flex flex-col items-center md:items-start">
+                <Link
+                  href="https://linkedin.com/in/bipin-v-k-499b751a6"
+                  className="flex items-center space-x-2 hover:text-gray-700 transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LINKEDIN
+                </Link>
               </div>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
 
         <div className="absolute bottom-4 px-4 w-full mx-10 flex justify-between text-gray-500 text-xs text-center">
           <p>Built by Bipin with 🤍</p>

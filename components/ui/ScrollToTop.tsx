@@ -25,10 +25,10 @@ const ScrollToTop = () => {
   return (
     showScroll && (
       <button
-        className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 focus:outline-none"
+        className="flex hover:animate-bounce items-center effect-shine fixed bottom-6 right-6 p-3 rounded-full  shadow-lg  focus:outline-none"
         onClick={scrollToTop}
       >
-        ↑
+        Scroll To Top
       </button>
     )
   );

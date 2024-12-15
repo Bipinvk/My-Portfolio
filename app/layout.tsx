@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import MouseGlitchEffect from "@/components/ui/GlitchEffect";
 import AdvancedLoader from "./loading";
+import Head from "next/head";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <Link rel="shortcut icon" href="/static/favicon.ico" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,29 +76,33 @@ const Hero = () => {
     >
       <div className="h-full py-20 w-full">
         <div className="h-3/6 w-full flex justify-center items-end">
-          <h1
-            ref={multidisciplinaryRef}
-            className="text-2xl text-justify opacity-0"
-          >
-            Multi-disciplinary
-            <br />
-            Creative developer
-          </h1>
+          <div>
+            <h1
+              ref={multidisciplinaryRef}
+              className="text-3xl text-justify opacity-0"
+            >
+              Multi-disciplinary
+              <br />
+              Creative developer
+            </h1>
+            <div></div>
+          </div>
         </div>
-        <div className="h-3/6 w-full flex justify-start items-end">
-          <h1 ref={experienceRef} className="text-3xl opacity-0">
-            Turning ideas to Experience
-            <br /> through collaboration
-            <br /> and creativity.
-          </h1>
-        </div>
-        <div className="py-4">
-          <a href="#contact" className="nav-link hover:text-black group ">
-            <span className="animate-bounce inline-block group-hover:animate-none mr-1">
-              ↳{" "}
-            </span>
-            Book a meeting
-          </a>
+        <div className="h-3/6 w-full flex justify-between text-gray-300 items-end">
+          <div className="">
+            <h1 ref={experienceRef} className="text-2xl opacity-0">
+              Turning ideas to Experience
+              <br /> through collaboration
+              <br /> and creativity.
+            </h1>
+
+            <Link href="#contact" className="text-gray-500  effect-shine nav-link group ">
+              <span className=" hover:animate-bounce inline-block group-hover:animate-none mr-1">
+                ↳{" "}
+              </span>
+              Book a meeting
+            </Link>
+          </div>
         </div>
       </div>
     </div>
