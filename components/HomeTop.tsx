@@ -8,8 +8,8 @@ const HomeTop = () => {
       id="about"
       className="min-h-screen w-full flex justify-center items-center"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center py-20 max-w-8xl">
-        <div className="text-center mb-12 w-full flex items-center justify-center">
+      <div className="w-full h-full flex flex-col items-center justify-center  xs:py-4 md:py-16 sm:py-4 lg:py-20 max-w-8xl">
+        <div className="text-center  w-full flex items-center justify-center">
           <AnimatedText />
         </div>
 
@@ -31,12 +31,12 @@ const HomeTop = () => {
               Services
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-3 ">
-              <li>Full-Stack Web Development</li>
-              <li>Artificial Intelligence Solutions</li>
-              <li>Security and Authentication</li>
-              <li>Mobile Applications</li>
-              <li>UI/UX Design</li>
-              <li>Technical Consulting</li>
+              <li>· Full-Stack Web Development</li>
+              <li>· Artificial Intelligence Solutions</li>
+              <li>· Security and Authentication</li>
+              <li>· Mobile Applications</li>
+              <li>· UI/UX Design</li>
+              <li>· Technical Consulting</li>
             </ul>
           </section>
         </main>

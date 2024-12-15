@@ -6,9 +6,10 @@ const Footer = () => {
         <section className="w-full max-w-6xl container mx-auto  py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex items-center justify-center md:justify-start text-center md:text-left">
-              <p className="text-xl font-medium">
+              <p className="text-xl lg;text-3xl font-medium md:text-base sm:text-2xl">
                 Feel free to contact me.
-                <br /> {"Let's"} work together to bring your ideas to life! <br />
+                <br /> {"Let's"} work together to bring your ideas to life!{" "}
+                <br />
                 Have a great day {":)"}
               </p>
             </div>
@@ -23,7 +24,7 @@ const Footer = () => {
                 src="/footer/video.mp4"
               ></video>
             </div>
-            <div className="flex  items-center justify-center md:items-start gap-4">
+            <div className="flex text-sm items-center justify-center md:items-start gap-4 sm:text-sm md:text-base lg:text-md">
               <div className="flex flex-col items-center md:items-start ">
                 <Link
                   href="mailto:bipinvk47@gmail.com"

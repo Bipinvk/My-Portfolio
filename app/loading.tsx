@@ -54,7 +54,7 @@ const ModernLoader: React.FC<LoaderProps> = ({ duration = 3000 }) => {
           opacity: 0,
           duration: 0.5,
           onComplete: () => {
-            router.push("/"); 
+            router.push("/");
           },
         });
       }
@@ -69,18 +69,12 @@ const ModernLoader: React.FC<LoaderProps> = ({ duration = 3000 }) => {
       className="fixed inset-0 z-[9999] flex items-center justify-center "
     >
       {/* Loading Counter */}
-      <div ref={counterRef} className="text-sm font-bold text-white absolute flex items-end justify-end">
-        {progress}%
-      </div>
-
-
-
-      {/* Bottom Progress Indicator */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[4px] bg-gray-800">
-        <div
-          className="h-full bg-gray-800"
-          style={{ width: `${progress}%`, transition: "width 0.1s linear" }}
-        ></div>
+      <div
+        ref={counterRef}
+        className="z-10 absolute bottom-3 right-3 text-sm font-extralight text-gray-300 flex items-end justify-end"
+      >
+        {"("}
+        {progress}%{")"}
       </div>
     </div>
   );
