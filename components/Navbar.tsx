@@ -63,7 +63,7 @@ const Navbar = () => {
           <Link href="#projects" className="nav-link effect-shine">
             Projects
           </Link>
-          <Link href="#expertise" className="nav-link effect-shine">
+          <Link href="#experience" className="nav-link effect-shine">
             Expertise
           </Link>
           <Link href="#experience" className="nav-link effect-shine">
