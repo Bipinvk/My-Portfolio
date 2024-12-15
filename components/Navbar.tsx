@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import { X, Menu } from "lucide-react"; // Using lucide-react for icons
+import { X } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,10 +60,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close menu when a link is clicked
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
 
   return (
     <header
