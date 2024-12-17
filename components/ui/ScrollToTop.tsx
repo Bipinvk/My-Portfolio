@@ -25,7 +25,7 @@ const ScrollToTop = () => {
   return (
     showScroll && (
       <button
-        className="flex hover:border hover:border-zinc-800  items-center effect-shine fixed bottom-6 right-6 p-3  shadow-lg  focus:outline-none bg-zinc-800/50"
+        className="flex hover:border hover:border-zinc-800  items-center effect-shine fixed bottom-6 right-6 p-3  shadow-lg  focus:outline-none bg-zinc-800/50 border-y border-zinc-800"
         onClick={scrollToTop}
       >
         ↑

@@ -5,7 +5,7 @@ const AnimatedText: React.FC = () => {
 
   useEffect(() => {
     const colors = ["#7c7d7d", "#ebebeb", "#ffffff", "#a7a7a7", "#d9d9d9"];
-    const words: NodeListOf<HTMLSpanElement> | null = 
+    const words: NodeListOf<HTMLSpanElement> | null =
       textRef.current?.querySelectorAll("span.word") || null;
 
     const handleScroll = () => {
@@ -14,17 +14,17 @@ const AnimatedText: React.FC = () => {
       words.forEach((word, index) => {
         const wordRect = word.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        
+
         // Calculate the distance of the word from the top of the viewport
         const distanceFromTop = windowHeight - wordRect.top;
-        
+
         // Use the index and distance to create a staggered color transition
         const colorIndex = Math.floor(
           (Math.abs(distanceFromTop) / 50 + index * 0.5) % colors.length
         );
-        
+
         word.style.color = colors[colorIndex];
-        word.style.transition = 'color 0.3s ease-in-out';
+        word.style.transition = "color 0.3s ease-in-out";
       });
     };
 
@@ -41,7 +41,7 @@ const AnimatedText: React.FC = () => {
   }, []);
 
   const text = [
-    "Tu amiga & Versatile Developer based in India.",
+    "Versatile Developer based in India.",
     "With 2 years of professional experience in multidisciplinary development.",
     "Driven by a passion for creating impactful solutions.",
     "Currently delivering value to clients and projects worldwide.",
@@ -49,17 +49,11 @@ const AnimatedText: React.FC = () => {
 
   return (
     <div className="text-center mb-12 w-full flex items-center justify-center">
-      <p 
-        className="text-gray-300 text-2xl text-justify" 
-        ref={textRef}
-      >
+      <p className="text-gray-300 text-xl text-justify" ref={textRef}>
         {text.map((line, lineIndex) => (
           <span key={lineIndex} className="block">
             {line.split(" ").map((word, wordIndex) => (
-              <span 
-                key={wordIndex} 
-                className="word inline-block mr-1"
-              >
+              <span key={wordIndex} className="word inline-block mr-1">
                 {word}&nbsp;
               </span>
             ))}

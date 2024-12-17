@@ -89,7 +89,7 @@ const Hero = () => {
     <div
       ref={containerRef}
       id="home"
-      className="w-full min-h-screen flex items-center justify-center px-4 py-20 md:py-24"
+      className="w-full h-screen flex items-center justify-center px-4 py-20 md:py-24"
     >
       <div className="max-w-6xl w-full flex flex-col items-center justify-center space-y-10 lg:space-y-12 md:space-y-14 sm:space-y-8">
         <div className="w-full max-w-xl justify-start">
@@ -121,10 +121,11 @@ const Hero = () => {
             className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2 opacity-0"
           >
             Turning <span className="effect-shine ">Ideas</span> to Experiences
-            <br /> through Creativity 
+            <br /> through Creativity
           </h2>
 
           <Link
+            data-aos="fade-up"
             href="#contact"
             className="inline-block text-gray-400 effect-shine nav-link group"
           >

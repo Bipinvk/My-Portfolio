@@ -19,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "🗯 Bipin'seau ",
+  title: "🗯 bipin~ ",
   description: "Turning ideas into reality!",
 };
 

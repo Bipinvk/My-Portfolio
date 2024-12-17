@@ -60,13 +60,12 @@ const Navbar = () => {
     };
   }, []);
 
-
   return (
     <header
       ref={navRef}
       className={`
-        fixed top-0 left-0 w-full z-50 shadow-sm border-gray-200 navbar 
-        lg:py-3 md:py-1 bg-black/70 px-4 sm:px-8 transition-all duration-300 
+        fixed top-0 left-0 w-full z-50 shadow-sm border-b border-zinc-900/30 navbar 
+        lg:py-3 md:py-1 bg-black/70 px-4 sm:px-8 transition-all duration-300 backdrop-blur-xs
         ${isNavVisible ? "translate-y-0" : "-translate-y-full"}
       `}
     >
@@ -112,7 +111,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden  shadow-lg">
+        <div className="md:hidden  shadow-lg py-4 bg-black/80 backdrop-opacity-10">
           <nav className="flex flex-col items-end space-y-2 ">
             <Link href="#about" className="nav-link effect-shine">
               About

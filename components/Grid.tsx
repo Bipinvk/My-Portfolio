@@ -132,7 +132,7 @@ const projects = [
 
 const Grid = () => {
   return (
-    <div id="experience">
+    <div id="experience" className="px-4">
       <BentoGrid>
         {/* How I Work Section */}
         <BentoCard
