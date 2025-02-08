@@ -75,7 +75,7 @@ const Footer = () => {
               ref={textRef}
               className="flex items-center justify-center md:justify-start text-center md:text-left"
             >
-              <p className="text-xl lg:text-3xl font-medium md:text-base sm:text-2xl">
+              <p className="text-xl lg:text-2xl font-medium md:text-lg sm:text-2xl">
                 Feel free to contact me.
                 <br /> {"Let's"} work together to bring your ideas to life!{" "}
                 <br />

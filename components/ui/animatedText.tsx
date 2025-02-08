@@ -61,6 +61,7 @@ const AnimatedText: React.FC = () => {
           </span>
         ))}
       </p>
+      <span className="md:min-w-52"></span>
     </div>
   );
 };

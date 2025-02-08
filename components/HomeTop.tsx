@@ -80,7 +80,7 @@ const HomeTop = () => {
           <section className="mb-12">
             <h2 className="font-extralight mb-4 flex items-center gap-2">
               <Star size={16} className="text-gray-300" />
-              Services
+              Skill Set
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-2">
               <li>· Full-Stack Web Development</li>

@@ -77,16 +77,33 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8  ">
-          <Link href="#about" className="nav-link effect-shine">
+          <Link
+            href="#about"
+            className="nav-link effect-shine"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             About
           </Link>
-          <Link href="#experience" className="nav-link effect-shine">
+          <Link
+            href="#experience"
+            className="nav-link effect-shine"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Expertise
           </Link>
-          <Link href="#experience" className="nav-link effect-shine">
-            Experience
+          <Link
+            href="#contact"
+            className="nav-link effect-shine"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Contact
           </Link>
-
           <div className="pl-20">
             <button
               onClick={handleResumeDownload}
@@ -113,14 +130,32 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden  shadow-lg py-4 bg-black/80 backdrop-opacity-10">
           <nav className="flex flex-col items-end space-y-2 ">
-            <Link href="#about" className="nav-link effect-shine">
+            <Link
+              href="#about"
+              className="nav-link effect-shine"
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+            >
               About
             </Link>
 
-            <Link href="#experience" className="nav-link effect-shine">
+            <Link
+              href="#experience"
+              className="nav-link effect-shine"
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+            >
               Expertise
             </Link>
-            <Link href="#contact" className="nav-link effect-shine">
+            <Link
+              href="#contact"
+              className="nav-link effect-shine"
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+            >
               Contact
             </Link>
             <div className="pl-20">
