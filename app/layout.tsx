@@ -6,7 +6,7 @@ import MouseGlitchEffect from "@/components/ui/GlitchEffect";
 import AdvancedLoader from "./loading";
 import Head from "next/head";
 import Link from "next/link";
-
+import { Analytics } from "@vercel/analytics/next";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{scrollBehavior:'smooth'}}>
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
         <Link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
@@ -47,6 +47,7 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </MouseGlitchEffect>
+        <Analytics />
       </body>
     </html>
   );
