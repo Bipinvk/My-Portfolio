@@ -60,7 +60,7 @@ const techStacks = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   },
   {
-    name: "AWS S3",
+    name: "AWS",
     icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
   },
   {
@@ -81,54 +81,68 @@ const techStacks = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
   },
   {
-    name: "AWS Cognito",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-  },
-  {
     name: "Tailwind CSS",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    name: "Figma",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
   },
 ];
 
 // Timeline of Professional Achievements
-
 const projects = [
   {
-    year: "Nov 2024 - Present",
+    year: "Jul 2025 - Present",
+    name: "TestQ AI",
+    icon: CloudIcon,
+    description: "AI-driven QA automation testing tool",
+  },
+  {
+    year: "Jul 2025 - Present",
+    name: "Capsa AI",
+    icon: GlobeIcon,
+    description: "Healthcare insights platform for anomaly detection",
+  },
+  {
+    year: "Jan 2025 - Jun 2025",
+    name: "Resume Analyzer AI",
+    icon: DatabaseIcon,
+    description: "AI-powered JD matching and resume screening tool",
+  },
+  {
+    year: "Nov 2024 - Dec 2024",
     name: "EC TPA Finder AI",
     icon: CloudIcon,
-    description:
-      "AI-driven insurance data extraction system using React.js and TypeScript",
+    description: "Insurance data extraction and dashboard platform",
   },
   {
     year: "Aug 2024 - Nov 2024",
     name: "SECQAI",
     icon: DatabaseIcon,
-    description:
-      "Automated AI security questionnaire response tool with intuitive dashboards",
+    description: "Automated AI security questionnaire response tool",
   },
   {
     year: "Mar 2024 - Aug 2024",
     name: "Genesis SaaS Platform",
     icon: GlobeIcon,
-    description:
-      "Developed comprehensive SaaS platform with AI-powered tools and subscription models",
+    description: "SaaS platform with AI-powered tools and subscriptions",
   },
   {
     year: "Dec 2023 - Feb 2024",
     name: "AH Connect",
     icon: BarChartIcon,
-    description:
-      "In-house time tracking and team collaboration application with real-time features",
+    description: "Time tracking and team collaboration application",
   },
   {
-    year: "Sept 2023 - Nov 2023",
+    year: "Sep 2023 - Nov 2023",
     name: "Resource Management App",
     icon: CodeIcon,
-    description:
-      "Enhanced resource allocation tool with integrated project management capabilities",
+    description: "Resource allocation and project management tool",
   },
 ];
+
+
 
 const Grid = () => {
   return (

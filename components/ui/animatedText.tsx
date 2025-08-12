@@ -42,7 +42,7 @@ const AnimatedText: React.FC = () => {
 
   const text = [
     "Versatile Developer based in India.",
-    "With 2 years of professional experience in multidisciplinary development.",
+    "With 2+ years of professional experience in multidisciplinary development.",
     "Driven by a passion for creating impactful solutions.",
     "Currently delivering value to clients and projects worldwide.",
   ];

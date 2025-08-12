@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X , Menu} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +65,7 @@ const Navbar = () => {
       ref={navRef}
       className={`
         fixed top-0 left-0 w-full z-50 shadow-sm border-b border-zinc-900/30 navbar 
-        lg:py-3 md:py-1 bg-black/70 px-4 sm:px-8 transition-all duration-300 backdrop-blur-xs
+        lg:py-3 md:py-1 bg-black/70 px-4 sm:px-8 py-4 transition-all duration-300 backdrop-blur-xs
         ${isNavVisible ? "translate-y-0" : "-translate-y-full"}
       `}
     >
@@ -120,7 +120,7 @@ const Navbar = () => {
             {isMenuOpen == true ? (
               <X size={18} className="hover:text-gray-400" />
             ) : (
-              <span className="material-icons effect-shine">menu</span>
+              <span className="material-icons effect-shine"><Menu/></span>
             )}
           </span>
         </button>
